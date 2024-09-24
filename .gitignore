@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 /order-service/docker/mysql/data/
+/api-gateway/volume-data/

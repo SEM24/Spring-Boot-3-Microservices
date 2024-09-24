@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  keycloakdb:
+    container_name: keycloakdb
+    image: mysql:8
+    volumes:
+      - ./volume-data/mysql_keycloak_data:/var/lib/mysql
+    env_file:
+      - src/main/resources/imports/keycloak.env
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:24.0.1
+    command: -v start-dev --import-realm --features=account3
+    env_file:
+      - src/main/resources/imports/keycloak.env
+    ports:
+      - "8181:8080"
+    depends_on:
+      - keycloakdb
+    volumes:
+      - ./docker/keycloak/realms:/opt/keycloak/data/import/
