@@ -1,4 +1,4 @@
-package product.model;
+package product.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +18,7 @@ public class Product {
     @Id
     private String id;
     private String name;
+    private String skuCode;
     private String description;
     private BigDecimal price;
 }

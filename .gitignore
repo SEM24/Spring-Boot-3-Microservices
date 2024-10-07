@@ -33,3 +33,6 @@ build/
 .vscode/
 /order-service/docker/mysql/data/
 /api-gateway/volume-data/
+/inventory-service/docker/
+/order-service/mysql/
+/product-service/data/

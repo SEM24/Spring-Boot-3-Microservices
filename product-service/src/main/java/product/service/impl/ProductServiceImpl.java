@@ -3,9 +3,9 @@ package product.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import product.model.Product;
 import product.model.dto.ProductRequest;
 import product.model.dto.ProductResponse;
+import product.model.entity.Product;
 import product.repository.ProductRepository;
 import product.service.ProductService;
 
@@ -21,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
                 .name(productRequest.name())
+                .skuCode(productRequest.skuCode())
                 .description(productRequest.description())
                 .price(productRequest.price())
                 .build();
@@ -36,6 +37,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private ProductResponse mapToProductResponse(Product product) {
-        return new ProductResponse(product.getId(), product.getName(), product.getDescription(), product.getPrice());
+        return new ProductResponse(product.getId(), product.getName(), product.getSkuCode(), product.getDescription(), product.getPrice());
     }
 }
