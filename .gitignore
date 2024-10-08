@@ -36,3 +36,4 @@ build/
 /inventory-service/docker/
 /order-service/mysql/
 /product-service/data/
+/api-gateway/data/
