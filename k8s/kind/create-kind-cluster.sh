@@ -1,0 +1,1 @@
+go install sigs.k8s.io/kind@v0.24.0 && kind create cluster --name product-microservices --config kind-config.yaml

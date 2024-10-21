@@ -37,3 +37,4 @@ build/
 /order-service/mysql/
 /product-service/data/
 /api-gateway/data/
+/docker.properties
